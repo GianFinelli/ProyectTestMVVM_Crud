@@ -15,7 +15,7 @@ using Xamarin.Forms;
 
 namespace MVVM_Crud.ViewModel
 {
-    public class AgregarProductoViewModel : INotifyPropertyChanged
+    public class EditarProductoViewModel : INotifyPropertyChanged
     {
         #region Properties
         public event PropertyChangedEventHandler PropertyChanged;
@@ -40,21 +40,29 @@ namespace MVVM_Crud.ViewModel
         #endregion
         public ICommand GuardarCommand { get; set; }
         public ICommand FileCommand { get; set; }
-        public AgregarProductoViewModel()
+
+        public Producto ProductoEdit { get; set; }
+        public EditarProductoViewModel(Producto producto)
         {
+            Nombre = producto.Nombre;
+            Precio = producto.Precio;
+            ImagenPath = producto.ImagenFile;
+            ImagenByte = producto.ImagenFile;
+            ProductoEdit = producto;
             GuardarCommand = new Command(OnGuardar);
             FileCommand = new Command(OnFile);
         }
 
-        private void OnGuardar()
+        public void OnGuardar()
         {
-            var producto = Producto();
-            App.database.unitOfWork.productoRepository.InsertarItem(producto);
+            var productoEditado = Producto(ProductoEdit);
+            App.database.unitOfWork.productoRepository.EditarItem(productoEditado);
             App.MasterDetail.Navigation.PushAsync(new IndexProductoPage());
         }
 
-        public Producto Producto() => new Producto
+        public Producto Producto(Producto producto) => new Producto
         {
+            Id = producto.Id,
             Nombre = Nombre,
             Precio = Precio,
             Imagen = Imagen,

@@ -1,5 +1,6 @@
 ﻿using MVVM_Crud.Model;
 using MVVM_Crud.View;
+using MVVM_Crud.View.VProducto;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -24,6 +25,7 @@ namespace MVVM_Crud.ViewModel
         }
 
         public ICommand AgregarCommand { get; set; }
+        public ICommand EditarCommand { get; set; }
         public ICommand BorrarCommand { get; set; }
         public ProductoViewModel()
         {
@@ -31,10 +33,12 @@ namespace MVVM_Crud.ViewModel
             Listado = list;
 
             AgregarCommand = new Command(OnAgregar);
+            EditarCommand = new Command(OnEditar);
             BorrarCommand = new Command(OnBorrar);
         }
 
         private void OnAgregar() => App.MasterDetail.Navigation.PushAsync(new AgregarProductoPage());
+        private void OnEditar(object obj) => App.MasterDetail.Navigation.PushAsync(new EditarProductoPage(obj as Producto));
 
         private void OnBorrar(object obj)
         {

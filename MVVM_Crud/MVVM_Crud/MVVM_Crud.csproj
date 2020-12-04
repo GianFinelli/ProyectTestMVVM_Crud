@@ -25,10 +25,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="View\AgregarProductoPage.xaml">
+    <Compile Update="View\VProducto\EditarProductoPage.xaml.cs">
+      <DependentUpon>EditarProductoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\DetailPage.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="View\VProducto\IndexProductoPage.xaml.cs">
+      <DependentUpon>IndexProductoPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="View\VProducto\AgregarProductoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\DetailPage.xaml">
+    <EmbeddedResource Update="View\VProducto\IndexProductoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\MasterPage.xaml">

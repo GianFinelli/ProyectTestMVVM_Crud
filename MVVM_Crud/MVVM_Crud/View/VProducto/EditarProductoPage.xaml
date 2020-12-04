@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVVM_Crud.View.VProducto.EditarProductoPage"
+             Title="Editar Producto">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Padding="20">
+                <Entry Placeholder="Nombre" Text="{Binding Nombre, Mode=TwoWay}"></Entry>
+                <Entry Placeholder="Precio" Text="{Binding Precio, Mode=TwoWay}"></Entry>
+                <!--<Entry Placeholder="Imagen" Text="{Binding Imagen, Mode=TwoWay}"></Entry>-->
+                <Image Source="{Binding Path=ImagenByte, Mode=TwoWay}"
+                       WidthRequest="300" HeightRequest="300" BackgroundColor="#EFEFEF"
+                       HorizontalOptions="Center" VerticalOptions="Center"></Image>
+                <Button Command="{Binding FileCommand}" Text="Actualizar Imagen"
+                        BackgroundColor="#789CB4" TextColor="white"></Button>
+            </StackLayout>
+            <StackLayout Padding="20,10,20,20">
+                <Button Command="{Binding GuardarCommand}" 
+                        Text="Actualizar producto" HeightRequest="70"
+                        BackgroundColor="#22333E" TextColor="white"
+                        ImageSource="ic_add.png" ContentLayout="left,0"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -5,9 +5,12 @@
              Title="Master">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <StackLayout Padding="20" BackgroundColor="LightGray">
+                <Label Text="Xamarin choise"></Label>
+            </StackLayout>
+            <StackLayout Margin="20">
+                <Button Clicked="Button_Clicked" Text="Producto" BackgroundColor="Transparent" TextColor="Black"></Button>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

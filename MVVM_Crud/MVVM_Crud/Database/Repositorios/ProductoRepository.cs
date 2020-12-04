@@ -27,7 +27,8 @@ namespace MVVM_Crud.Database.Repositorios
                 Id = entidad.Id,
                 Nombre = entidad.Nombre,
                 Precio = entidad.Precio,
-                Imagen = entidad.Imagen
+                Imagen = entidad.Imagen,
+                ImagenFile = entidad.ImagenFile
             };
             return database.UpdateAsync(editItem);
         }

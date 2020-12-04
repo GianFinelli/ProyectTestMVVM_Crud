@@ -1,6 +1,5 @@
-﻿using MVVM_Crud.ViewModel;
-using Plugin.Media;
-//using Plugin.FilePicker;
+﻿using MVVM_Crud.Model;
+using MVVM_Crud.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,15 +9,15 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace MVVM_Crud.View
-{
+namespace MVVM_Crud.View.VProducto 
+{ 
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AgregarProductoPage : ContentPage
+    public partial class IndexProductoPage : ContentPage
     {
-        public AgregarProductoPage()
+        public IndexProductoPage()
         {
             InitializeComponent();
-            BindingContext = new AgregarProductoViewModel();
+            BindingContext = new ProductoViewModel();
         }
     }
 }

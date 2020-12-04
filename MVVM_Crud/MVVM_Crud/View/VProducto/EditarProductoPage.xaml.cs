@@ -1,5 +1,7 @@
 ﻿using MVVM_Crud.Model;
 using MVVM_Crud.ViewModel;
+using Plugin.Media;
+//using Plugin.FilePicker;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,14 +11,15 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace MVVM_Crud.View
+namespace MVVM_Crud.View.VProducto
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class DetailPage : ContentPage
+    public partial class EditarProductoPage : ContentPage
     {
-        public DetailPage()
+        public EditarProductoPage(Producto producto)
         {
             InitializeComponent();
+            BindingContext = new EditarProductoViewModel(producto);
         }
     }
 }
