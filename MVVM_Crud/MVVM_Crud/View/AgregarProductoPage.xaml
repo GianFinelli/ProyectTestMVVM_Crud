@@ -5,19 +5,20 @@
              Title="Agregar Producto">
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout>
+            <StackLayout Padding="20">
                 <Entry Placeholder="Nombre" Text="{Binding Nombre, Mode=TwoWay}"></Entry>
                 <Entry Placeholder="Precio" Text="{Binding Precio, Mode=TwoWay}"></Entry>
-                <Entry Placeholder="Imagen" Text="{Binding Imagen, Mode=TwoWay}"></Entry>
+                <!--<Entry Placeholder="Imagen" Text="{Binding Imagen, Mode=TwoWay}"></Entry>-->
                 <Image Source="{Binding Path=ImagenByte, Mode=TwoWay}"
-                       WidthRequest="200" HeightRequest="200" 
+                       WidthRequest="300" HeightRequest="300" BackgroundColor="#EFEFEF"
                        HorizontalOptions="Center" VerticalOptions="Center"></Image>
-                <Button Command="{Binding FileCommand}" Text="Agregar Imagen"></Button>
+                <Button Command="{Binding FileCommand}" Text="Agregar Imagen"
+                        BackgroundColor="#789CB4" TextColor="white"></Button>
             </StackLayout>
             <StackLayout Padding="20,10,20,20">
                 <Button Command="{Binding GuardarCommand}" 
                         Text="Agregar producto" HeightRequest="70"
-                        BackgroundColor="#97BBC8" TextColor="white"
+                        BackgroundColor="#22333E" TextColor="white"
                         ImageSource="ic_add.png" ContentLayout="left,0"></Button>
             </StackLayout>
         </StackLayout>

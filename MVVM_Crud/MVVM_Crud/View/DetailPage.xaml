@@ -2,45 +2,47 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MVVM_Crud.View.DetailPage"
-             Title="Index">
+             Title="Inicio Listado">
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout Margin="10">
+            <StackLayout Margin="20,20,20,0">
                 <Button Command="{Binding AgregarCommand}" Text="Agregar producto" HeightRequest="60"
                         BackgroundColor="#182C33" TextColor="white"
                         ImageSource="ic_add.png" ContentLayout="left,0"></Button>
             </StackLayout>
-            <ListView x:Name="miLista" SeparatorVisibility="None" HasUnevenRows="True" ItemsSource="{Binding Listado}">
+            <ListView x:Name="miLista" SeparatorVisibility="None" HasUnevenRows="True" ItemsSource="{Binding Listado}" Margin="20,5,20,20">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid Margin="4" Padding="10">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="100"></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="100"></ColumnDefinition>
-                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                    <ColumnDefinition Width="auto"></ColumnDefinition>
-                                </Grid.ColumnDefinitions>
+                            <Frame BackgroundColor="#EFEFEF" CornerRadius="4" Margin="2,5" Padding="0">
+                                <Grid Padding="10,5">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="100"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="100"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
 
-                                <Frame CornerRadius="200" Grid.Column="0" Padding="-20" IsClippedToBounds="True" WidthRequest="100" HeightRequest="100">
-                                    <!--<Image Source="{Binding Imagen}"></Image>-->
-                                    <Image Source="{Binding ImagenFile}"></Image>
-                                </Frame>
-                                <StackLayout Grid.Column="1" VerticalOptions="Center" Padding="10 ,0">
-                                    <Label Text="{Binding Id}" IsVisible="False"></Label>
-                                    <Label Text="Producto:" TextColor="Black"></Label>
-                                    <Label Text="{Binding Nombre}"></Label>
-                                    <Label Text="Precio:" TextColor="Black"></Label>
-                                    <Label Text="{Binding Precio}"></Label>
-                                </StackLayout>
-                                <StackLayout Grid.Column="2" HorizontalOptions="Start"  VerticalOptions="Center">
-                                    <Button ImageSource="ic_borrar.png"  WidthRequest="50" HeightRequest="50" CornerRadius="4"
+                                    <Frame CornerRadius="200" Grid.Column="0" Padding="-20" IsClippedToBounds="True" WidthRequest="100" HeightRequest="100">
+                                        <!--<Image Source="{Binding Imagen}"></Image>-->
+                                        <Image Source="{Binding ImagenFile}"></Image>
+                                    </Frame>
+                                    <StackLayout Grid.Column="1" VerticalOptions="Center" Padding="10 ,0">
+                                        <Label Text="{Binding Id}" IsVisible="False"></Label>
+                                        <Label Text="Producto:" TextColor="Black"></Label>
+                                        <Label Text="{Binding Nombre}"></Label>
+                                        <Label Text="Precio:" TextColor="Black"></Label>
+                                        <Label Text="{Binding Precio}"></Label>
+                                    </StackLayout>
+                                    <StackLayout Grid.Column="2" HorizontalOptions="Start"  VerticalOptions="Center">
+                                        <Button ImageSource="ic_borrar.png"  WidthRequest="80" HeightRequest="80" CornerRadius="4"
                                         Command="{Binding Path=BindingContext.BorrarCommand, Source={x:Reference miLista}}" 
                                         CommandParameter="{Binding .}" BackgroundColor="#182C33"></Button>
-                                </StackLayout>
-                            </Grid>
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

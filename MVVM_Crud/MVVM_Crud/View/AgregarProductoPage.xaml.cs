@@ -20,30 +20,5 @@ namespace MVVM_Crud.View
             InitializeComponent();
             BindingContext = new AgregarProductoViewModel();
         }
-
-        //private async void Button_Clicked(object sender, EventArgs e)
-        //{
-        //    if (!CrossMedia.Current.IsPickPhotoSupported)
-        //    {
-        //        //await DisplayAlert("Photos Not Supported", ":( Permission not granted to photos.", "OK");
-        //        return;
-        //    }
-
-        //    var file = await Plugin.Media.CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
-        //    {
-        //        PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,
-
-        //    });
-
-        //    if (file == null)
-        //        return;
-
-        //    imagenSB.Source = ImageSource.FromStream(() =>
-        //    {
-        //        var stream = file.GetStream();
-        //        return stream;
-        //    });
-
-        //}
     }
 }

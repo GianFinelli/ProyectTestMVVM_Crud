@@ -31,14 +31,10 @@ namespace MVVM_Crud.ViewModel
             Listado = list;
 
             AgregarCommand = new Command(OnAgregar);
-
             BorrarCommand = new Command(OnBorrar);
         }
 
-        private void OnAgregar()
-        {
-            App.MasterDetail.Navigation.PushAsync(new AgregarProductoPage());
-        }
+        private void OnAgregar() => App.MasterDetail.Navigation.PushAsync(new AgregarProductoPage());
 
         private void OnBorrar(object obj)
         {
